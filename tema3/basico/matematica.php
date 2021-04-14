@@ -10,9 +10,9 @@ function factorial($n)
 
 function fibonacci($n)
 {
-	if ($n=1 or $n=0)
+	if ($n==1 or $n==0)
 		return $n;
 	else 
-		return fibonaci(n-2)+fibonaci(n-1);
+		return fibonacci(n-2)+fibonacci(n-1);
 }
 ?>
