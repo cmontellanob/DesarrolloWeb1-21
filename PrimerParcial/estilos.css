@@ -1,0 +1,63 @@
+body {
+	margin: 0 auto;
+}
+
+.contenedor {
+ width: 900px;
+}
+.encabezado {
+ width: 900px;
+ border-style: solid;
+
+}
+#logou{
+  width: 100px;
+  float: left;
+}
+#letras{
+width: 700px;
+ float: left;
+}
+#logofacu{
+  width: 100px;
+  float: left;
+}
+.cuerpo {
+	width: 800px;
+	float: left;
+}
+
+.derecha {
+   width: 100px;
+   float: left;
+}
+.pie {
+   width: 900px;
+   clear: both;
+   background-color: blue;
+   text-align: center;
+}
+
+ul.menuvertical {
+
+list-style: none;
+margin: 0;
+padding: 0;
+border-left:1px solid #7C7C7C;
+ 
+}
+
+ul.menuvertical li a:link, ul.menuvertical li a:visited {
+padding: .25em;
+
+display: block;
+text-decoration: none;
+color: #333;
+
+border-top:1px solid #7C7C7C;
+border-right:1px solid #7C7C7C;
+border-bottom:1px solid #9C9C9C;
+}
+ul.menuvertical li a:hover{
+	background-color: #FC0;
+}
