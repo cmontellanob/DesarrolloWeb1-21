@@ -1,0 +1,1 @@
+document.writeln("hola mundo"); 
