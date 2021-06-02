@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="nombre" class="titulo" >Nombre</label>
+        <input type="text" name="nombre" id="nombre"> <br>
+        <label for="apellido" class="titulo" >Apellido</label>
+        <input type="text" name="apellido"> <br>
+        <label for="sexo">Sexo</label>
+        <input type="radio" name="sexo" value="M">Masculino 
+        <input type="radio" name="sexo" value="F">Femenino 
+        
+        <br>
+        
+        <input type="submit" value="eviar">
+    </form>
+    <script>
+         var entradas=document.getElementsByTagName('input');
+         entradas[1].value="perez";
+         console.log(entradas);
+         var sexo=document.getElementsByName('sexo');
+         console.log(sexo);
+         //alert(sexo[0].value);
+         var nombre=document.getElementById('nombre').value;
+         console.log(nombre);
+
+         var titulos=document.getElementsByClassName('titulo');
+         console.log(titulos);
+         
+
+
+    </script>
+</body>
+</html>
