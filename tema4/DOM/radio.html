@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Va a aprobar la materia: <br>
+    <input type="radio" value="si" name="pregunta" id="pregunta_si" /> SI <br>
+    <input type="radio" value="no" name="pregunta" id="pregunta_no" /> NO <br>
+    <input type="radio" value="nsnc" name="pregunta" id="pregunta_nsnc" checked="checked" /> NS/NC <br>
+    <input type="button" value="Ver valore" id="btn"> <br>
+    <div id="resultado"></div>
+    <script type="text/javascript">
+     document.getElementById('btn').onclick=mostrar;
+     function mostrar()
+     { 
+        var elementos = document.getElementsByName("pregunta");
+        var aux="";
+        for (var i = 0; i < elementos.length; i++) {
+            aux+=" Elemento: " + elementos[i].value + "\n Seleccionado: " +
+                elementos[i].checked+"<br>";
+        }
+        document.getElementById("resultado").innerHTML=aux;
+    }
+    </script>
+
+
+</body>
+
+</html>

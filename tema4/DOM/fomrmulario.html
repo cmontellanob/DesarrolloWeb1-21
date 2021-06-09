@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   <h3>Ingrese sus datos</h3>
+    
+    <form id="form1" name="form1" method="post">
+        Nombre <input name="txtTitulo" type="text" id="txtTitulo" /> <br />
+        Apellido <input type="text" name="txtAutor" value="datos de prueba" /><br />
+        direccion<input type="text" name="txtISBN" /><br />
+        Telefono <input type="text" name="txtEditorial" /><br />
+        Email<input type="text" name="txtEdicion" /> <br />
+        <input type="submit" name="button" id="button" value="Enviar" />
+    </form>
+
+    <script type="text/javascript">
+        var f = document.forms;
+        var l = f.length;
+        alert('Existen ' + l + ' formularios en la pagina');
+        document.write(f[0].txtAutor.value);
+    </script>
+
+
+</body>
+
+</html>
