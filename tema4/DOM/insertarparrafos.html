@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">
+        <p id="p1">Este un parrafo</p>
+        <p id="p2">Este es otro parrafo</p>
+    </div>
+    <input type="button" value="insertar" onclick="insertar();">
+    <script>
+        function insertar() {
+            var para = document.createElement("h1");
+            var node = document.createTextNode("Este es el título");
+            para.appendChild(node);
+
+            var element = document.getElementById("div1");
+            var child = document.getElementById("p1");
+            element.insertBefore(para, child);
+        }
+    </script>
+</body>
+
+</html>
