@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Población por Departamento</title>
+</head>
+
+<body>
+    <label for="departamentos">Departamento</label>
+    <select name="departamentos" id="departamentos">
+        <option value="1">Chuquisaca</option>
+        <option value="2">La Paz</option>
+        <option value="3">Cochabamba</option>
+        <option value="4">Oruro</option>
+        <option value="5">Potosi</option>
+        <option value="6">Tarija</option>
+        <option value="7">Santa Cruz</option>
+        <option value="8">Beni</option>
+        <option value="9">Pando</option>
+    </select> <br>
+    <label for="provincia">Provincia</label>
+    <select name="provincias" id="provincias">
+
+    </select> <br>
+    <div id="poblacion" style="border: 1 solid;">resultado</div>
+    <script>
+        provincias="";
+        function cambiarDepartamento() {
+            var parametro = "iddepartamento=" + this.value;
+            var ajax = new XMLHttpRequest() //crea el objetov ajax 
+            ajax.open("get", "provincias.php?" + parametro, true);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4) {
+                    provincias = eval(ajax.responseText);
+                    cargarProvincias();
+                }
+            }
+            ajax.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+            ajax.send();
+        }
+        function cargarProvincias()
+        {
+            seldepartamentos=document.getElementById('provincias');
+            seldepartamentos.innerHTML = ''
+            var prov="";
+            for (var i=0 ;i<provincias.length;i++)
+            {
+               seldepartamentos.appendChild( new Option(provincias[i].provincia, provincias[i].id));
+               
+            }
+            
+        }
+        function mostrarPoblacion()
+        {
+            var valor="";
+            for (var i=0 ;i<provincias.length;i++)
+            {
+                if(provincias[i].id==this.value)
+                   valor=provincias[i].poblacion
+               
+            }
+            document.getElementById('poblacion').innerHTML=valor;
+        }
+
+        document.getElementById('departamentos').onchange = cambiarDepartamento;
+        document.getElementById('provincias').onchange = mostrarPoblacion; 
+         
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
