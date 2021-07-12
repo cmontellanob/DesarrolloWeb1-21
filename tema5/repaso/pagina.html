@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionamiento de ajax</title>
+</head>
+<body>
+    <div id="uno" style="border-style:solid ;">uno</div>
+    <div id="dos" style="border-style:solid ;">dos</div>
+    <div id="tres" style="border-style:solid ;">tre</div>
+ <button onclick="llamadaget('formulariosuma.html')">Suma</button>
+ <button onclick="llamadaget('formularioresta.html')">Resta</button>
+ <script>
+  function llamadaget(parametro){
+	var objeto = new XMLHttpRequest() //crea el objetov ajax 
+	objeto.open("get", parametro, true);
+	objeto.onreadystatechange = function () {
+		if (objeto.readyState == 4) {
+			document.getElementById('uno').innerHTML = objeto.responseText;
+		}
+	}
+	objeto.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+	objeto.send(null);
+  }
+
+  function llamarsuma(){
+	var objeto = new XMLHttpRequest() //crea el objetov ajax
+    var url="sumar.php?a="+document.getElementById('a').value+"&b="+document.getElementById('b').value;
+    
+	objeto.open("get", url, true);
+	objeto.onreadystatechange = function () {
+		if (objeto.readyState == 4) {
+			document.getElementById('dos').innerHTML = objeto.responseText;
+		}
+	}
+	objeto.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+	objeto.send(null);
+  }
+
+  function llamarresta(){
+	var objeto = new XMLHttpRequest() //crea el objetov ajax
+    var parametros="a="+document.getElementById('a').value+"&b="+document.getElementById('b').value;
+    
+	objeto.open("post", "resta.php", true);
+	objeto.onreadystatechange = function () {
+		if (objeto.readyState == 4) {
+			document.getElementById('dos').innerHTML = objeto.responseText;
+		}
+	}
+    objeto.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); //clave para que funcione cuando se envia por post 
+	objeto.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+	objeto.send(parametros);
+  }
+
+ </script>
+
+</body>
+
+
+</html>
