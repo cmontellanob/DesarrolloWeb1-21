@@ -12,6 +12,10 @@
     <div id="tres" style="border-style:solid ;">tre</div>
  <button onclick="llamadaget('formulariosuma.html')">Suma</button>
  <button onclick="llamadaget('formularioresta.html')">Resta</button>
+ <button onclick="llamadaget('formulariologin.html')">Autenticar</button>
+ <button onclick="llamadaget('valor.php')">Valor sesion</button>
+ <button onclick="llamadaget('tabla.php')">tabla</button>
+
  <script>
   function llamadaget(parametro){
 	var objeto = new XMLHttpRequest() //crea el objetov ajax 
@@ -52,6 +56,34 @@
     objeto.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); //clave para que funcione cuando se envia por post 
 	objeto.setRequestHeader("Content-Type", "text/html; charset=utf-8");
 	objeto.send(parametros);
+  }
+
+  function autenticar(){
+	var objeto = new XMLHttpRequest() //crea el objetov ajax
+    var parametros="correoelectronico="+document.getElementById('correoelectronico').value+"&password="+document.getElementById('password').value;
+    
+	objeto.open("post", "autenticar.php", true);
+	objeto.onreadystatechange = function () {
+		if (objeto.readyState == 4) {
+			document.getElementById('tres').innerHTML = objeto.responseText;
+		}
+	}
+    objeto.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); //clave para que funcione cuando se envia por post 
+	objeto.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+	objeto.send(parametros);
+  }
+  function editar(valor){
+	var objeto = new XMLHttpRequest() //crea el objetov ajax
+    var url="formularioeditar.php?id="+valor;
+    
+	objeto.open("get", url, true);
+	objeto.onreadystatechange = function () {
+		if (objeto.readyState == 4) {
+			document.getElementById('dos').innerHTML = objeto.responseText;
+		}
+	}
+	objeto.setRequestHeader("Content-Type", "text/html; charset=utf-8");
+	objeto.send(null);
   }
 
  </script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+</head>
+<body>
+	<form action="autenticar.php" method="POST" id="formulario">
+		<label for="username">Nombre de Usuario</label>
+		<input type="text" name="username" required> <br>
+		<label for="password">Contraseña</label>
+		<input type="password"  name="password" id="password" readonly > <br>
+	
+
+	</form>
+	<table>
+		<tr>
+			<td><button onclick="escribir(1)">1</button></td>
+			<td><button onclick="escribir(2)">2</button></td>
+			<td><button onclick="escribir(3)">3</button></td>
+		</tr>
+		<tr>
+			<td ><button onclick="escribir(4)">4</button></td>
+			<td><button onclick="escribir(5)">5</button></td>
+			<td><button onclick="escribir(6)">6</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="escribir(7)">7</button></td>
+			<td><button onclick="escribir(8)">8</button></td>
+			<td><button onclick="escribir(9)">9</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="escribir('A')">A</button></td>
+			<td><button onclick="escribir('B')">B</button></td>
+			<td><button onclick="escribir('C')">C</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="enviar()">Entrar</button></td>
+			<td><button onclick="limpiar()">Limpiar</button></td>
+			
+		</tr>
+	</table>
+<script src="final2.js"></script>
+
+</body>
+</html>
